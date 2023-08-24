@@ -11,6 +11,7 @@ namespace WinFormsApp1
     internal class Records
     {
         public Record[] record = new Record[100];
+        public DateTime RecentTime = DateTime.Now + TimeSpan.FromMinutes(20);
 
         private void ArraySorting() 
         {
@@ -24,6 +25,10 @@ namespace WinFormsApp1
                         save = record[i];
                         record[i] = record[j];
                         record[j] = save;
+                    }
+                    if (record[i].EndTime > RecentTime)
+                    {
+                        RecentTime = record[i].EndTime;
                     }
                 }
             }

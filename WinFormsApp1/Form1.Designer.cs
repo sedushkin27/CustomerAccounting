@@ -149,9 +149,9 @@
             listBox1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 21;
-            listBox1.Location = new Point(157, 0);
+            listBox1.Location = new Point(164, 0);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(331, 450);
+            listBox1.Size = new Size(391, 450);
             listBox1.TabIndex = 16;
             // 
             // buttonDeleteAll
@@ -168,7 +168,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(488, 450);
+            ClientSize = new Size(555, 450);
             Controls.Add(buttonDeleteAll);
             Controls.Add(listBox1);
             Controls.Add(buttonUpdateList);

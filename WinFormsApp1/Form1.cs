@@ -13,8 +13,9 @@ namespace WinFormsApp1
         {
             string name = addName.Text;
             DateTime date = startDateTime.Value;
-            addName.Clear();
             records.AddClient(date, name);
+            addName.Clear();
+            startDateTime.Value = records.RecentTime;
         }
 
         private void nameText_TextChanged(object sender, EventArgs e)
