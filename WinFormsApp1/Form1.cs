@@ -13,7 +13,8 @@ namespace WinFormsApp1
         {
             string name = addName.Text;
             DateTime date = startDateTime.Value;
-            records.AddClient(date, name);
+            int howLongTime = Convert.ToInt32(HowLongTime.Text);
+            records.AddClient(date, name, howLongTime);
             addName.Clear();
             startDateTime.Value = records.RecentTime;
         }

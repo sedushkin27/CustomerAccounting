@@ -41,11 +41,13 @@
             buttonUpdateList = new Button();
             listBox1 = new ListBox();
             buttonDeleteAll = new Button();
+            label6 = new Label();
+            HowLongTime = new TextBox();
             SuspendLayout();
             // 
             // buttonEnter
             // 
-            buttonEnter.Location = new Point(12, 132);
+            buttonEnter.Location = new Point(12, 189);
             buttonEnter.Name = "buttonEnter";
             buttonEnter.Size = new Size(128, 49);
             buttonEnter.TabIndex = 0;
@@ -101,7 +103,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(13, 193);
+            label4.Location = new Point(13, 250);
             label4.Name = "label4";
             label4.Size = new Size(105, 15);
             label4.TabIndex = 12;
@@ -109,7 +111,7 @@
             // 
             // deleteName
             // 
-            deleteName.Location = new Point(12, 239);
+            deleteName.Location = new Point(12, 296);
             deleteName.Name = "deleteName";
             deleteName.Size = new Size(128, 23);
             deleteName.TabIndex = 11;
@@ -117,7 +119,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(12, 221);
+            label5.Location = new Point(12, 278);
             label5.Name = "label5";
             label5.Size = new Size(39, 15);
             label5.TabIndex = 10;
@@ -125,7 +127,7 @@
             // 
             // buttonDelete
             // 
-            buttonDelete.Location = new Point(12, 280);
+            buttonDelete.Location = new Point(12, 337);
             buttonDelete.Name = "buttonDelete";
             buttonDelete.Size = new Size(128, 49);
             buttonDelete.TabIndex = 13;
@@ -135,7 +137,7 @@
             // 
             // buttonUpdateList
             // 
-            buttonUpdateList.Location = new Point(12, 335);
+            buttonUpdateList.Location = new Point(12, 392);
             buttonUpdateList.Name = "buttonUpdateList";
             buttonUpdateList.Size = new Size(128, 56);
             buttonUpdateList.TabIndex = 15;
@@ -151,12 +153,12 @@
             listBox1.ItemHeight = 21;
             listBox1.Location = new Point(164, 0);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(391, 450);
+            listBox1.Size = new Size(391, 511);
             listBox1.TabIndex = 16;
             // 
             // buttonDeleteAll
             // 
-            buttonDeleteAll.Location = new Point(12, 397);
+            buttonDeleteAll.Location = new Point(12, 454);
             buttonDeleteAll.Name = "buttonDeleteAll";
             buttonDeleteAll.Size = new Size(128, 41);
             buttonDeleteAll.TabIndex = 17;
@@ -164,11 +166,29 @@
             buttonDeleteAll.UseVisualStyleBackColor = true;
             buttonDeleteAll.Click += buttonDeleteAll_Click;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(13, 129);
+            label6.Name = "label6";
+            label6.Size = new Size(115, 15);
+            label6.TabIndex = 18;
+            label6.Text = "How long it will take";
+            // 
+            // HowLongTime
+            // 
+            HowLongTime.Location = new Point(13, 147);
+            HowLongTime.Name = "HowLongTime";
+            HowLongTime.Size = new Size(127, 23);
+            HowLongTime.TabIndex = 19;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(555, 450);
+            ClientSize = new Size(555, 511);
+            Controls.Add(HowLongTime);
+            Controls.Add(label6);
             Controls.Add(buttonDeleteAll);
             Controls.Add(listBox1);
             Controls.Add(buttonUpdateList);
@@ -203,5 +223,7 @@
         private Button buttonUpdateList;
         private ListBox listBox1;
         private Button buttonDeleteAll;
+        private Label label6;
+        private TextBox HowLongTime;
     }
 }

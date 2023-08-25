@@ -34,14 +34,14 @@ namespace WinFormsApp1
             }
         }
 
-        public void AddClient(DateTime startTime, string name)
+        public void AddClient(DateTime startTime, string name, int howLongTime)
         {
             this.ArraySorting();
             for (int i = 0; i < record.Length; i++)
             {
                 if (record[i].Сreated == false)
                 {
-                    record[i] = new Record(startTime, name);
+                    record[i] = new Record(startTime, name, howLongTime);
                     this.ArraySorting();
                     break;
                 }

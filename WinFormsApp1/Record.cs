@@ -10,12 +10,13 @@ namespace WinFormsApp1
     {
         public bool Сreated = false;
         public readonly DateTime StartTime { get; }
-        public readonly DateTime EndTime => StartTime + TimeSpan.FromMinutes(20);
+        public readonly DateTime EndTime;
         public readonly string Name { get; }
 
-        public Record(DateTime startTime, string name)
+        public Record(DateTime startTime, string name, int howLongTime)
         {
             StartTime = startTime;
+            EndTime = startTime + TimeSpan.FromMinutes(howLongTime);
             Name = name;
             Сreated = true;
         }
