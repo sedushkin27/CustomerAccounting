@@ -2,7 +2,7 @@ namespace WinFormsApp1
 {
     public partial class Form1 : Form
     {
-        Records records = new Records();
+        RecordList records = new RecordList();
 
         public Form1()
         {
@@ -41,9 +41,9 @@ namespace WinFormsApp1
             listBox1.Items.Clear();
             for (int i = 0; i < records.record.Length; i++)
             {
-                if (records.record[i].Ñreated == true)
+                if (records[i].Ñreated == true)
                 {
-                    listBox1.Items.Add(records.record[i].Print());
+                    listBox1.Items.Add(records[i].ToString());
                 }
             }
         }

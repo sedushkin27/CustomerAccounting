@@ -8,10 +8,22 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace WinFormsApp1
 {
-    internal class Records
+    internal class RecordList
     {
         public Record[] record = new Record[100];
         public DateTime RecentTime;
+
+        public Record this[int index]
+        {
+            get
+            {
+                return record[index];
+            }
+            set
+            {
+                record[index] = value;
+            }
+        }
 
         private void ArraySorting() 
         {
