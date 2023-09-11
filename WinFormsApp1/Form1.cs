@@ -1,22 +1,37 @@
+using System.Windows.Forms;
+
 namespace WinFormsApp1
 {
     public partial class Form1 : Form
     {
-        RecordList records = new RecordList();
+        private List<Record> records = new List<Record>();
+        private DateTime EndTime = DateTime.Now;
 
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void buttonEnter_Click(object sender, EventArgs e)
+        private void ButtonEnter_Click(object sender, EventArgs e)
         {
             string name = addName.Text;
             DateTime date = startDateTime.Value;
             int howLongTime = Convert.ToInt32(HowLongTime.Text);
-            records.AddClient(date, name, howLongTime);
+
+            records.Add(new Record(date, name, howLongTime));
+            records.Sort();
             addName.Clear();
-            startDateTime.Value = records.RecentTime;
+
+            foreach (Record record in records)
+            {
+                if (record.EndTime > EndTime)
+                {
+                    EndTime = record.EndTime;
+                }
+            }
+
+            startDateTime.Value = EndTime;
+
         }
 
         private void nameText_TextChanged(object sender, EventArgs e)
@@ -29,26 +44,31 @@ namespace WinFormsApp1
 
         }
 
-        private void buttonDelete_Click(object sender, EventArgs e)
+        private void ButtonDelete_Click(object sender, EventArgs e)
         {
             string name = deleteName.Text;
             deleteName.Clear();
-            records.RemoveClient(name);
-        }
 
-        private void buttonUpdateList_Click(object sender, EventArgs e)
-        {
-            listBox1.Items.Clear();
-            for (int i = 0; i < records.record.Length; i++)
+            foreach(Record record in records.ToList())
             {
-                if (records[i].Ñreated == true)
+                if (record.Name == name)
                 {
-                    listBox1.Items.Add(records[i].ToString());
+                    records.Remove(record);
                 }
             }
+
+            records.Sort();
         }
 
-        private void buttonDeleteAll_Click(object sender, EventArgs e)
+        private void ButtonUpdateList_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            foreach(Record recordObject in records)
+            {
+                listBox1.Items.Add(recordObject.ToString());
+            }
+        }
+        private void ButtonDeleteAll_Click(object sender, EventArgs e)
         {
             records.Clear();
         }

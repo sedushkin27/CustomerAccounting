@@ -53,7 +53,7 @@
             buttonEnter.TabIndex = 0;
             buttonEnter.Text = "Enter";
             buttonEnter.UseVisualStyleBackColor = true;
-            buttonEnter.Click += buttonEnter_Click;
+            buttonEnter.Click += ButtonEnter_Click;
             // 
             // label1
             // 
@@ -133,7 +133,7 @@
             buttonDelete.TabIndex = 13;
             buttonDelete.Text = "Delete";
             buttonDelete.UseVisualStyleBackColor = true;
-            buttonDelete.Click += buttonDelete_Click;
+            buttonDelete.Click += ButtonDelete_Click;
             // 
             // buttonUpdateList
             // 
@@ -143,7 +143,7 @@
             buttonUpdateList.TabIndex = 15;
             buttonUpdateList.Text = "update the list ";
             buttonUpdateList.UseVisualStyleBackColor = true;
-            buttonUpdateList.Click += buttonUpdateList_Click;
+            buttonUpdateList.Click += ButtonUpdateList_Click;
             // 
             // listBox1
             // 
@@ -164,7 +164,7 @@
             buttonDeleteAll.TabIndex = 17;
             buttonDeleteAll.Text = "delete all ";
             buttonDeleteAll.UseVisualStyleBackColor = true;
-            buttonDeleteAll.Click += buttonDeleteAll_Click;
+            buttonDeleteAll.Click += ButtonDeleteAll_Click;
             // 
             // label6
             // 

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace WinFormsApp1
 {
-    struct Record 
+    struct Record : IComparable<Record>
     {
-        public bool Сreated { get; } = false;
+        public bool Created { get; } = false;
         public readonly DateTime StartTime { get; }
         public readonly DateTime EndTime { get; }
         public readonly string Name { get; }
@@ -18,12 +18,11 @@ namespace WinFormsApp1
             StartTime = startTime;
             EndTime = startTime + TimeSpan.FromMinutes(howLongTime);
             Name = name;
-            Сreated = true;
+            Created = true;
         }
 
-        public override string ToString()
-        {
-            return $"{StartTime.ToString("dd-MM-yyyy HH:mm")}-{EndTime.ToString("HH:mm")}: {Name}";
-        }
+        public override string ToString() => $"{StartTime:dd-MM-yyyy HH:mm}-{EndTime:HH:mm}: {Name}";
+
+        public int CompareTo(Record other) => this.EndTime.CompareTo(other.EndTime);
     }
 }
