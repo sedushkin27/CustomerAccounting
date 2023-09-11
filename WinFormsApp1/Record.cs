@@ -8,7 +8,6 @@ namespace WinFormsApp1
 {
     struct Record : IComparable<Record>
     {
-        public bool Created { get; } = false;
         public readonly DateTime StartTime { get; }
         public readonly DateTime EndTime { get; }
         public readonly string Name { get; }
@@ -18,7 +17,6 @@ namespace WinFormsApp1
             StartTime = startTime;
             EndTime = startTime + TimeSpan.FromMinutes(howLongTime);
             Name = name;
-            Created = true;
         }
 
         public override string ToString() => $"{StartTime:dd-MM-yyyy HH:mm}-{EndTime:HH:mm}: {Name}";
