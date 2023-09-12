@@ -1,4 +1,5 @@
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WinFormsApp1
 {
@@ -12,25 +13,48 @@ namespace WinFormsApp1
             InitializeComponent();
         }
 
-        private void ButtonEnter_Click(object sender, EventArgs e)
+        private void UpdateList()
+        {
+            records.Sort();
+            listBox1.Items.Clear();
+            foreach (Record recordObject in records)
+            {
+                listBox1.Items.Add(recordObject.ToString());
+            }
+        }
+
+        private void buttonEnter_Click(object sender, EventArgs e)
         {
             string name = addName.Text;
             DateTime date = startDateTime.Value;
-            int howLongTime = Convert.ToInt32(HowLongTime.Text);
-
-            records.Add(new Record(date, name, howLongTime));
-            records.Sort();
-            addName.Clear();
-
-            foreach (Record record in records)
+            bool check = Int32.TryParse(HowLongTime.Text, out int howLongTime);
+            if (check)
             {
-                if (record.EndTime > EndTime)
+                if (addName.Text == null || addName.Text.Trim() == "")
                 {
-                    EndTime = record.EndTime;
+                    MessageBox.Show("you didn't enter a name.");
+                }
+                else
+                {
+                    records.Add(new Record(date, name, howLongTime));
+                    addName.Clear();
+
+                    foreach (Record record in records)
+                    {
+                        if (record.EndTime > EndTime)
+                        {
+                            EndTime = record.EndTime;
+                        }
+                    }
+
+                    UpdateList();
+                    startDateTime.Value = EndTime;
                 }
             }
-
-            startDateTime.Value = EndTime;
+            else
+            {
+                MessageBox.Show("you entered the wrong number.");
+            }
 
         }
 
@@ -47,30 +71,28 @@ namespace WinFormsApp1
         private void ButtonDelete_Click(object sender, EventArgs e)
         {
             string name = deleteName.Text;
-            deleteName.Clear();
-
-            foreach(Record record in records.ToList())
+            if (deleteName.Text == null || deleteName.Text.Trim() == "") 
+            { 
+                MessageBox.Show("you didn't enter a name."); 
+            }
+            else
             {
-                if (record.Name == name)
+                for (int i = 0; i < records.Count; i++)
                 {
-                    records.Remove(record);
+                    if (records[i].Name == name)
+                    {
+                        records.RemoveAt(i);
+                    }
                 }
             }
-
-            records.Sort();
+            deleteName.Clear();
+            UpdateList();
         }
 
-        private void ButtonUpdateList_Click(object sender, EventArgs e)
-        {
-            listBox1.Items.Clear();
-            foreach(Record recordObject in records)
-            {
-                listBox1.Items.Add(recordObject.ToString());
-            }
-        }
         private void ButtonDeleteAll_Click(object sender, EventArgs e)
         {
             records.Clear();
+            UpdateList();
         }
     }
 }

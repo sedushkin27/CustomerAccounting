@@ -38,7 +38,6 @@
             deleteName = new TextBox();
             label5 = new Label();
             buttonDelete = new Button();
-            buttonUpdateList = new Button();
             listBox1 = new ListBox();
             buttonDeleteAll = new Button();
             label6 = new Label();
@@ -53,7 +52,7 @@
             buttonEnter.TabIndex = 0;
             buttonEnter.Text = "Enter";
             buttonEnter.UseVisualStyleBackColor = true;
-            buttonEnter.Click += ButtonEnter_Click;
+            buttonEnter.Click += buttonEnter_Click;
             // 
             // label1
             // 
@@ -135,16 +134,6 @@
             buttonDelete.UseVisualStyleBackColor = true;
             buttonDelete.Click += ButtonDelete_Click;
             // 
-            // buttonUpdateList
-            // 
-            buttonUpdateList.Location = new Point(12, 392);
-            buttonUpdateList.Name = "buttonUpdateList";
-            buttonUpdateList.Size = new Size(128, 56);
-            buttonUpdateList.TabIndex = 15;
-            buttonUpdateList.Text = "update the list ";
-            buttonUpdateList.UseVisualStyleBackColor = true;
-            buttonUpdateList.Click += ButtonUpdateList_Click;
-            // 
             // listBox1
             // 
             listBox1.Dock = DockStyle.Right;
@@ -153,14 +142,14 @@
             listBox1.ItemHeight = 21;
             listBox1.Location = new Point(164, 0);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(391, 511);
+            listBox1.Size = new Size(391, 456);
             listBox1.TabIndex = 16;
             // 
             // buttonDeleteAll
             // 
-            buttonDeleteAll.Location = new Point(12, 454);
+            buttonDeleteAll.Location = new Point(12, 392);
             buttonDeleteAll.Name = "buttonDeleteAll";
-            buttonDeleteAll.Size = new Size(128, 41);
+            buttonDeleteAll.Size = new Size(128, 49);
             buttonDeleteAll.TabIndex = 17;
             buttonDeleteAll.Text = "delete all ";
             buttonDeleteAll.UseVisualStyleBackColor = true;
@@ -186,12 +175,11 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(555, 511);
+            ClientSize = new Size(555, 456);
             Controls.Add(HowLongTime);
             Controls.Add(label6);
             Controls.Add(buttonDeleteAll);
             Controls.Add(listBox1);
-            Controls.Add(buttonUpdateList);
             Controls.Add(buttonDelete);
             Controls.Add(label4);
             Controls.Add(deleteName);
@@ -220,7 +208,6 @@
         private TextBox deleteName;
         private Label label5;
         private Button buttonDelete;
-        private Button buttonUpdateList;
         private ListBox listBox1;
         private Button buttonDeleteAll;
         private Label label6;
