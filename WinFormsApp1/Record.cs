@@ -8,9 +8,9 @@ namespace WinFormsApp1
 {
     struct Record : IComparable<Record>
     {
-        public readonly DateTime StartTime { get; }
-        public readonly DateTime EndTime { get; }
-        public readonly string Name { get; }
+        public DateTime StartTime { get; }
+        public DateTime EndTime { get; }
+        public string Name { get; }
 
         public Record(DateTime startTime, string name, int howLongTime)
         {
