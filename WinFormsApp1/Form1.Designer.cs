@@ -191,7 +191,7 @@
             Controls.Add(label1);
             Controls.Add(buttonEnter);
             Name = "Form1";
-            Text = "clients";
+            Text = "Clients";
             ResumeLayout(false);
             PerformLayout();
         }

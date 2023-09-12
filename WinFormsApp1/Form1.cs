@@ -5,17 +5,19 @@ namespace WinFormsApp1
 {
     public partial class Form1 : Form
     {
-        private List<Record> records = new List<Record>();
+        private List<Record> records;
 
         public Form1()
         {
             InitializeComponent();
+            records = new List<Record>();
         }
 
         private void UpdateList()
         {
             records.Sort();
             listBox1.Items.Clear();
+
             foreach (Record recordObject in records)
             {
                 listBox1.Items.Add(recordObject.ToString());
@@ -70,9 +72,10 @@ namespace WinFormsApp1
         private void ButtonDelete_Click(object sender, EventArgs e)
         {
             string name = deleteName.Text;
-            if (string.IsNullOrWhiteSpace(deleteName.Text)) 
-            { 
-                MessageBox.Show("You didn't enter a name."); 
+
+            if (string.IsNullOrWhiteSpace(deleteName.Text))
+            {
+                MessageBox.Show("You didn't enter a name.");
             }
             else
             {
@@ -84,6 +87,7 @@ namespace WinFormsApp1
                     }
                 }
             }
+
             deleteName.Clear();
             UpdateList();
         }
