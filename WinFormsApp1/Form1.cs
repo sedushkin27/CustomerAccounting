@@ -6,7 +6,6 @@ namespace WinFormsApp1
     public partial class Form1 : Form
     {
         private List<Record> records = new List<Record>();
-        private DateTime EndTime = DateTime.Now;
 
         public Form1()
         {
@@ -28,32 +27,32 @@ namespace WinFormsApp1
             string name = addName.Text;
             DateTime date = startDateTime.Value;
             bool check = Int32.TryParse(HowLongTime.Text, out int howLongTime);
+
             if (check)
             {
-                if (addName.Text == null || addName.Text.Trim() == "")
+                if (string.IsNullOrWhiteSpace(addName.Text))
                 {
-                    MessageBox.Show("you didn't enter a name.");
+                    MessageBox.Show("You didn't enter a name.");
                 }
                 else
                 {
                     records.Add(new Record(date, name, howLongTime));
                     addName.Clear();
+                    HowLongTime.Clear();
+                    UpdateList();
 
                     foreach (Record record in records)
                     {
-                        if (record.EndTime > EndTime)
+                        if (record.EndTime > startDateTime.Value)
                         {
-                            EndTime = record.EndTime;
+                            startDateTime.Value = record.EndTime;
                         }
                     }
-
-                    UpdateList();
-                    startDateTime.Value = EndTime;
                 }
             }
             else
             {
-                MessageBox.Show("you entered the wrong number.");
+                MessageBox.Show("You entered the wrong number.");
             }
 
         }
@@ -71,9 +70,9 @@ namespace WinFormsApp1
         private void ButtonDelete_Click(object sender, EventArgs e)
         {
             string name = deleteName.Text;
-            if (deleteName.Text == null || deleteName.Text.Trim() == "") 
+            if (string.IsNullOrWhiteSpace(deleteName.Text)) 
             { 
-                MessageBox.Show("you didn't enter a name."); 
+                MessageBox.Show("You didn't enter a name."); 
             }
             else
             {
