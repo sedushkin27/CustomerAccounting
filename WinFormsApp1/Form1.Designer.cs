@@ -46,12 +46,13 @@
             // 
             // buttonEnter
             // 
+            buttonEnter.BackColor = SystemColors.ButtonHighlight;
             buttonEnter.Location = new Point(12, 189);
             buttonEnter.Name = "buttonEnter";
             buttonEnter.Size = new Size(128, 49);
             buttonEnter.TabIndex = 0;
             buttonEnter.Text = "Enter";
-            buttonEnter.UseVisualStyleBackColor = true;
+            buttonEnter.UseVisualStyleBackColor = false;
             buttonEnter.Click += buttonEnter_Click;
             // 
             // label1
@@ -69,7 +70,6 @@
             addName.Name = "addName";
             addName.Size = new Size(128, 23);
             addName.TabIndex = 4;
-            addName.TextChanged += nameText_TextChanged;
             // 
             // label2
             // 
@@ -88,7 +88,6 @@
             startDateTime.Name = "startDateTime";
             startDateTime.Size = new Size(128, 23);
             startDateTime.TabIndex = 8;
-            startDateTime.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // label3
             // 
@@ -126,12 +125,13 @@
             // 
             // buttonDelete
             // 
+            buttonDelete.BackColor = SystemColors.ButtonHighlight;
             buttonDelete.Location = new Point(12, 337);
             buttonDelete.Name = "buttonDelete";
             buttonDelete.Size = new Size(128, 49);
             buttonDelete.TabIndex = 13;
             buttonDelete.Text = "Delete";
-            buttonDelete.UseVisualStyleBackColor = true;
+            buttonDelete.UseVisualStyleBackColor = false;
             buttonDelete.Click += ButtonDelete_Click;
             // 
             // listBox1
@@ -147,12 +147,13 @@
             // 
             // buttonDeleteAll
             // 
+            buttonDeleteAll.BackColor = SystemColors.ButtonHighlight;
             buttonDeleteAll.Location = new Point(12, 392);
             buttonDeleteAll.Name = "buttonDeleteAll";
             buttonDeleteAll.Size = new Size(128, 49);
             buttonDeleteAll.TabIndex = 17;
             buttonDeleteAll.Text = "delete all ";
-            buttonDeleteAll.UseVisualStyleBackColor = true;
+            buttonDeleteAll.UseVisualStyleBackColor = false;
             buttonDeleteAll.Click += ButtonDeleteAll_Click;
             // 
             // label6
@@ -175,6 +176,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(555, 456);
             Controls.Add(HowLongTime);
             Controls.Add(label6);

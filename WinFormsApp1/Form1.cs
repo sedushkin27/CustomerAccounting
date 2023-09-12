@@ -59,16 +59,6 @@ namespace WinFormsApp1
 
         }
 
-        private void nameText_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void ButtonDelete_Click(object sender, EventArgs e)
         {
             string name = deleteName.Text;
